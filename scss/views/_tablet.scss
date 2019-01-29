@@ -1,0 +1,11 @@
+// SCSS Mobile
+
+@media (max-width: 991px) {
+	body .login_background .container .card.auth-card {
+		@include flex-direction(column);
+		.image-side , .form-side{
+			width: 100%;
+			padding: 60px;
+		}
+	}
+}

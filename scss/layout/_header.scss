@@ -1,0 +1,44 @@
+// Header
+// 
+.header {
+	position: relative;
+    z-index: 100;
+	.header-mobile {
+		background: #fff;
+		@include box-shadow2(0 1px 15px rgba(0, 0, 0, 0.04),0 1px 6px rgba(0, 0, 0, 0.04));
+		.header-mobile_box {
+			height: 45px;
+			.header-mobile_text {
+				h1 {
+					line-height: 45px;
+				}
+			}
+		}
+		&_left, &_right {
+			width: 45px;
+			height: 45px;
+			line-height: 45px;
+			@include position(absolute,0,auto,auto,auto);
+		}
+		&_left {
+			left: 0;
+			svg {
+    			@include transform(rotate(90deg) scaleX(-1));
+			}
+			&.toback {
+				svg {
+					width: 25px;
+					@include transform(rotate(0deg) scaleX(1));
+				}
+			}
+		}
+		&_right {
+			right: 0;
+			svg {
+				width: 20px;
+				top: 0;
+				@include animation(ring 2s ease infinite);
+			}
+		}
+	}
+}

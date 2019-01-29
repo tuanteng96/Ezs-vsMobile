@@ -1,0 +1,60 @@
+// SCSS Ipad
+// 
+@media (max-width: 767px) {
+	body .login_background .container .card.auth-card {
+		@include flex-direction(column);
+		.image-side, .form-side {
+			padding: 35px 30px;
+		}
+		&.auth-card {
+			.image-side  {
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+			.form-side {
+				.logo {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	.btn-radius {
+		width: 100%;
+	}
+}
+@media (max-width: 575px) {
+	body {
+		.login_background {
+			.container {
+				.card.auth-card {
+					.form-side , .image-side {
+						padding: 30px 20px;
+					}
+				}
+			}
+		}
+	}
+	.flex-login {
+		@include flex-direction(column);
+		.btn {
+			width: 100%;
+			margin-top: 12px;
+		}
+	}
+}
+@media (max-width: 320px) {
+	ul.box-fild {
+		li {
+			.content-text {
+				padding: 10px;
+				@include calc(width,'100% - 65px');
+			}
+			.icon {
+				width: 65px;
+			}
+		}
+	}
+
+}

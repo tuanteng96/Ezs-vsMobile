@@ -1,0 +1,172 @@
+// Màu sắc
+// .cl-pr {
+// 	color: #f26451;
+// }
+
+$color-map: (
+	"black" #303030,
+	"black2" #000000,
+	"red" #f26450,
+	"grey" #f8f8f8,
+	"green" #28a745,
+	"white" #ffffff,
+);
+
+@each $color in $color-map {
+	.#{nth($color, 1)}-color {
+		color: nth($color, 2);
+	}
+	.#{nth($color, 1)}-bg {
+		background-color: nth($color, 2);
+	}
+}
+
+
+// input
+.form-control {
+	@include border-radius(0.1rem);
+	outline: initial !important;
+	@include box-shadow(0,0,0,transparent !important);
+	font-size: 15px;
+	padding: 0.7rem 0.75rem 0.65rem 0.75rem;
+	line-height: 1.5;
+	border: 1px solid #d7d7d7;
+	background: white;
+	color: #000;
+	height: 42px;
+	font-weight: 400;
+	@include placeholder-color(#d7d7d7,#000);
+}
+.btn-add {
+	width: 90px;
+	height: 42px;
+	@include border-radius(0);
+	font-weight: 500;
+	&:hover {
+		color: #fff;
+	}
+}
+.out-none {
+	outline: none;
+	border: 0;
+}
+.btn-radius {
+	@include border-radius (50px);
+	@include box-shadow2 (0 1px 2px 0 rgba(0,0,0,0.15), 0 1px 3px 1px rgba(0,0,0,0.15));
+	padding: 0.65rem 2.6rem 0.6rem 2.5rem;
+}
+
+// width
+// 
+.w-103 {
+	width: 103px;
+}
+
+// Padding
+// 
+.pd-15 {
+	padding: 15px;
+}
+// transform 
+// 
+.trans-90 {
+    @include transform(rotate(90deg) scaleX(-1));
+}
+// Font size
+//
+
+@for $i from 10 through 50 {
+	.font-size-#{$i} {
+		font-size: $i + px;
+	}
+}
+
+// Font Weight
+// 
+@for $w from 3 through 9 {
+	$fontWeight: $w * 100;
+	.font-weight-#{$fontWeight} {
+		font-weight: $fontWeight;
+	}
+}
+
+
+// flex
+// 1. flex-center
+.flex-center {
+	@include flexbox;
+	@include justify-content(center);
+	@include flex-direction(column);
+}
+
+// z-index
+// 
+// 
+@for $z from 0 through 1000 {
+	.z-index-#{$z} {
+		z-index: $z;
+	}
+}
+
+// box- shadow
+// 
+.box-shadow {
+	@include box-shadow2(0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04));
+}
+
+// padding
+// 
+@for $p from 0 through 30 {
+	.p-#{$p} {
+		padding: $p + px;
+	}
+	.p-l-#{$p} {
+		padding-left: $p + px;
+	}
+	.p-r-#{$p} {
+		padding-right: $p + px;
+	}
+	.p-b-#{$p} {
+		padding-bottom: $p + px;
+	}
+	.p-t-#{$p} {
+		padding-top: $p + px;
+	}
+}
+
+// margin
+// 
+@for $m from 0 through 30 {
+	.m-#{$m} {
+		margin: $m + px;
+	}
+	.m-l-#{$m} {
+		margin-left: $m + px;
+	}
+	.m-r-#{$m} {
+		margin-right: $m + px;
+	}
+	.m-b-#{$m} {
+		margin-bottom: $m + px;
+	}
+	.m-t-#{$m} {
+		margin-top: $m + px;
+	}
+}
+@for $line from 0 through 5 {
+	.line-#{$line} {
+		border: $line + px solid #f3f3f3;
+	}
+	.line-t-#{$line} {
+		border-top: $line + px solid #f3f3f3;
+	}
+	.line-r-#{$line} {
+		border-right: $line + px solid #f3f3f3;
+	}
+	.line-b-#{$line} {
+		border-bottom: $line + px solid #f3f3f3;
+	}
+	.line-l-#{$line} {
+		border-left: $line + px solid #f3f3f3;
+	}
+}

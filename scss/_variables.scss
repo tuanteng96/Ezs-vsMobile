@@ -1,0 +1,227 @@
+// Khai báo các biến
+// 
+
+@include keyframes(ring) {
+	0% {
+		-webkit-transform: rotate(-15deg);
+		transform: rotate(-15deg);
+	}
+	2% {
+		-webkit-transform: rotate(15deg);
+		transform: rotate(15deg);
+	}
+	4% {
+		-webkit-transform: rotate(-18deg);
+		transform: rotate(-18deg);
+	}
+	6% {
+		-webkit-transform: rotate(18deg);
+		transform: rotate(18deg);
+	}
+	8% {
+		-webkit-transform: rotate(-22deg);
+		transform: rotate(-22deg);
+	}
+	10% {
+		-webkit-transform: rotate(22deg);
+		transform: rotate(22deg);
+	}
+	12% {
+		-webkit-transform: rotate(-18deg);
+		transform: rotate(-18deg);
+	}
+	14% {
+		-webkit-transform: rotate(18deg);
+		transform: rotate(18deg);
+	}
+	16% {
+		-webkit-transform: rotate(-12deg);
+		transform: rotate(-12deg);
+	}
+	18% {
+		-webkit-transform: rotate(12deg);
+		transform: rotate(12deg);
+	}
+	100%, 20% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+}
+
+//
+//
+@include keyframes(dash) {
+	0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+//
+@include keyframes(dot-3-move) {
+	20% {
+		@include transform(scale(1));
+	}
+	45% {
+		@include transform(translateY(-18px) scale(.45));
+	}
+	60% {
+		@include transform(translateY(-90px) scale(.45));
+	}
+	80% {
+		@include transform(translateY(-90px) scale(.45));
+	}
+	100% {
+		@include transform(translateY(0px) scale(1));
+	}
+}
+
+@include keyframes(dot-2-move) {
+  20% {
+  	@include transform(scale(1));
+  }
+  45% {
+  	@include transform(translate(-16px, 12px) scale(.45));
+  }
+  60% {
+  	@include transform(translate(-80px, 60px) scale(.45));
+  }
+  80% {
+  	@include transform(translate(-80px, 60px) scale(.45));
+  }
+  100% {
+  	@include transform(translateY(0px) scale(1));
+  }
+}
+
+@include keyframes(dot-1-move) {
+  20% {
+  	@include transform(scale(1));
+  }
+  45% {
+  	@include transform(translate(16px, 12px) scale(.45));
+  }
+  60% {
+  	@include transform(translate(80px, 60px) scale(.45));
+  }
+  80% {
+  	@include transform(translate(80px, 60px) scale(.45));
+  }
+  100% {
+  	@include transform(translateY(0px) scale(1));
+  }
+}
+
+@include keyframes(rotate-move) {
+  55% {
+  	@include transform(translate(-50%, -50%) rotate(0deg));
+  }
+  80% {
+  	@include transform(translate(-50%, -50%) rotate(360deg));
+  }
+  100% {
+  	@include transform(translate(-50%, -50%) rotate(360deg));
+  }
+}
+
+@include keyframes(index) {
+  0%, 100% {
+  	z-index: 3
+  }
+  33.3% {
+  	z-index: 2
+  }
+  66.6% {
+  	z-index: 1
+  }
+}
+
+@include keyframes(loader-icon-1) {
+     0% {
+         top: 0;
+         left: 0;
+    }
+     25% {
+         top: 0;
+         @include calc(left,"100% - 20px");
+    }
+     50% {
+         @include calc(top,"100% - 20px");
+         @include calc(left,"100% - 20px");
+    }
+     75% {
+         @include calc(top,"100% - 20px");
+         left: 0;
+    }
+     100% {
+         top: 0;
+         left: 0;
+    }
+}
+@include keyframes(loader-icon-2) {
+     0% {
+         top: 0;
+         @include calc(left,"100% - 20px");
+    }
+     25% {
+         top: calc(100% - 20px);
+         @include calc(left,"100% - 20px");
+    }
+     50% {
+         @include calc(top,"100% - 20px");
+         left: 0;
+    }
+     75% {
+         top: 0;
+         left: 0;
+    }
+     100% {
+         top: 0;
+         @include calc(left,"100% - 20px");
+    }
+}
+@include keyframes(loader-icon-3) {
+     0% {
+         @include calc(top,"100% - 20px");
+         @include calc(left,"100% - 20px");
+    }
+     25% {
+         @include calc(top,"100% - 20px");
+         left: 0;
+    }
+     50% {
+         top: 0;
+         left: 0;
+    }
+     75% {
+         top: 0;
+         @include calc(left,"100% - 20px");
+    }
+     100% {
+         @include calc(top,"100% - 20px");
+         @include calc(left,"100% - 20px");
+    }
+}
+@include keyframes(loader-icon-4) {
+     0% {
+         @include calc(top,"100% - 20px");
+         left: 0;
+    }
+     25% {
+         top: 0;
+         left: 0;
+    }
+     50% {
+         top: 0;
+         @include calc(left,"100% - 20px");
+    }
+     75% {
+         @include calc(top,"100% - 20px");
+         @include calc(left,"100% - 20px");
+    }
+     100% {
+         @include calc(top,"100% - 20px");
+         left: 0;
+    }
+}

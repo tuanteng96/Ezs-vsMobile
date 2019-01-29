@@ -1,0 +1,35 @@
+// Button SCSS
+// 
+// 
+.btn {
+	outline: initial !important;
+	font-size: 14px;
+}
+.btn-lg {
+	line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 2.6rem 0.6rem 2.6rem;
+}
+.btn-primary {
+	background-color: #f26451;
+	border-color: #f26451;
+	color: #fff;
+	&:hover {
+		color: #fff;
+		background-color: #da5644;
+		border-color: #da5644;
+	}
+}
+.btn-lg, .btn-group-lg > .btn, .btn-group-sm > .btn {
+	border-radius: 50px;
+}
+.btn-shadow {
+	@include box-shadow2(0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 3px 1px rgba(0, 0, 0, 0.15));
+}
+.btn-xs {
+	padding: 0px 5px;
+	font-size: 11px;
+	line-height: 1.5;
+	border-radius: 3px;
+}
