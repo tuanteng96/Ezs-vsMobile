@@ -4,6 +4,7 @@
 .menu-nav {
     width: 100%;
     @include position(fixed,auto,auto,0,0);
+    background: #fff;
 	ul {
 		height: 100%;
 		&.menu-bottom {
@@ -572,6 +573,17 @@ ul.nav-product {
 			}
 		}
 	}
+	&.ulImg-nopadding {
+		li {
+			padding: 10px;
+			.item-content {
+				@include calc(width,'100% - 80px');
+			}
+			.list-btn {
+				padding: 0 0 0 10px;
+			}
+		}
+	}
 }
 
 //
@@ -721,6 +733,52 @@ ul.nav-service {
 			.btn {
 				margin-bottom: 5px;
 			}
+		}
+	}
+}
+
+
+// nav filter pos
+// 
+ul.navpost-filter {
+	li {
+		padding: 15px;
+		border-bottom: 1px solid #f3f3f3;
+	}
+}
+///
+ul.menuList-active {
+	width: 70%;
+	li {
+		display: inline-block;
+		float: left;
+		width: 50%;
+		line-height: 52px;
+		text-align: center;
+		svg {
+			width: 20px;
+			margin-right: 5px;
+		}
+		span {
+			font-weight: 500;
+			font-size: 15px;
+		}
+	}
+}
+
+//
+//
+ul.menu-option {
+	li {
+		padding: 15px;
+		position: relative;
+		border-bottom: 1px solid #f3f3f3;
+		color: #000;
+		font-weight: 600;
+		text-align: center;
+		&.active {
+			background: #f26450;
+			color: #fff;
 		}
 	}
 }

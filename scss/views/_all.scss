@@ -336,10 +336,13 @@ button.btn-mobileSelect-gen:not([class*=col-]):not([class*=form-control]):not(.i
 		}
 	}
 	.nav-content {
-		padding: 10px;
 		.btn {
 			width: 100%;
-			margin-bottom: 8px;
+			margin-bottom: 5px;
+			border: 1px dashed #adadad;
+			box-shadow: none;
+			color: #000;
+			font-weight: 700;
 			&:last-child {
 				margin: 0;
 			}
@@ -368,7 +371,7 @@ button.btn-mobileSelect-gen:not([class*=col-]):not([class*=form-control]):not(.i
 		@include transform(translateY(0%));
 	}
 	.nav-form {
-		padding: 15px;
+		padding: 10px;
 	}
 	.hide {
 		height: 48px;
@@ -462,5 +465,86 @@ button.btn-mobileSelect-gen:not([class*=col-]):not([class*=form-control]):not(.i
     }
 }
 
-// search Input
+// search post
 // 
+.pos-h {
+	height: 100%;
+}
+.search-pos {
+	.app-add {
+		.info-form {
+			width: 100%;
+			float: none;
+			@include flexbox();
+			.btn {
+				width: 42px;
+			}
+			.form-control {
+				@include calc(width,'100% - 42px');
+			}
+			.btn-select {
+				width: 40px;
+			}
+		}
+	}
+}
+.pos-app {
+	@include calc(height,"100% - 88px");
+	ul {
+		li {
+			.item-img {
+				img {
+					@include  border-radius(100%);
+					height: 65px;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+
+.pos-filter {
+	.navpost-filter {
+		li {
+			.form-groups {
+				input[type="checkbox"] {
+					padding: 0;
+					height: initial;
+					width: initial;
+					margin-bottom: 0;
+					display: none;
+					cursor: pointer;
+					&:checked ~ label:after {
+						content: '';
+						display: block;
+						width: 5px;
+						height: 13px;
+						border: solid #f26451;
+						border-width: 0 2px 2px 0;
+						@include transform(rotate(45deg));
+						@include position(absolute,1px,auto,auto,7px);
+					}
+				}
+				label {
+					position: relative;
+					cursor: pointer;
+					display: block;
+					font-weight: 500;
+					&:before {
+						content: '';
+						-webkit-appearance: none;
+						background-color: transparent;
+						border: 1px solid #f26451;
+						@include box-shadow2(0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05));
+						padding: 8px;
+						display: inline-block;
+						position: relative;
+						vertical-align: middle;
+						cursor: pointer;
+						margin-right: 12px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -18,6 +18,11 @@ $color-map: (
 	}
 	.#{nth($color, 1)}-bg {
 		background-color: nth($color, 2);
+		svg {
+			path {
+				fill: #fff;
+			}
+		}
 	}
 }
 
@@ -86,7 +91,7 @@ $color-map: (
 @for $w from 3 through 9 {
 	$fontWeight: $w * 100;
 	.font-weight-#{$fontWeight} {
-		font-weight: $fontWeight;
+		font-weight: $fontWeight + !important;
 	}
 }
 
@@ -118,19 +123,19 @@ $color-map: (
 // 
 @for $p from 0 through 30 {
 	.p-#{$p} {
-		padding: $p + px;
+		padding: $p + px!important;
 	}
 	.p-l-#{$p} {
-		padding-left: $p + px;
+		padding-left: $p + px!important;
 	}
 	.p-r-#{$p} {
-		padding-right: $p + px;
+		padding-right: $p + px!important;
 	}
 	.p-b-#{$p} {
-		padding-bottom: $p + px;
+		padding-bottom: $p + px!important;
 	}
 	.p-t-#{$p} {
-		padding-top: $p + px;
+		padding-top: $p + px!important;
 	}
 }
 

@@ -87,7 +87,7 @@ $(document).ready(function(){
 		});
 	}
 
-	$('.nav-service li .btn').click(function(){
+	$('.nav-service li .btn, .btn-menu').click(function(){
 		navOption();
 	});
 	
@@ -104,19 +104,52 @@ $(document).ready(function(){
 		$('.input-filter').focus();
 	});
 
-	$(".nav-select .nav-product").hide();
-
 	$('.input-filter').keyup(function(){
 		$(".nav-select .nav-product").hide();
 		$(".loader-select").remove();
 		$(".nav-select").append(loaderSelect);
 		setTimeout(function(){
 			$(".loader-select").remove();
-			$(".nav-select .nav-product").show();
+			$(".nav-select .nav-product").show().removeClass("d-none");
 		}, 1000);
 	});
 	$(".nav-select .hide").click(function(){
 		$(".nav-select").removeClass("active");
 	});
 	
+	// pos search
+	// 
+	
+	$(".pos-app .nav-product").hide();
+
+	$('.key-pos').keyup(function(){
+		$(".pos-app .nav-product").hide();
+		$(".loader-select").remove();
+		$(".pos-app").append(loaderSelect);
+		setTimeout(function(){
+			$(".loader-select").remove();
+			$(".pos-app .nav-product").show();
+		}, 1000);
+	});
+
+	$('.pos-app .nav-product').click(function(){
+		navOption();
+	});
+
+	// List select Post
+	// 
+	// $(".btn-product").click(function(){
+	// 	$(this).addClass("active");
+	// 	$(".nav-select").addClass("active");
+	// 	navOptionHide();
+	// });
+
+	$("[data-out]").click(function(){
+		$("[data-out]").removeClass("active");
+		$(this).addClass("active");
+
+		let out = $(this).attr("data-out");
+		$("[data-option='"+ out +"']").addClass("active");
+		navOptionHide();
+	})
 });
