@@ -5,8 +5,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quản lí nhãn hàng</title>
+	<!-- bootstrap css -->
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<!-- fullscreen select -->
+	<link rel="stylesheet" href="libs/fullscreen-select/css/bootstrap-fullscreen-select.css">
+
+	<!-- datetimepicker -->
+	<link rel="stylesheet" href="libs/datetimepicker/css/gijgo.min.css">
+
+	<!-- All css -->
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Jquery -->
 	<script src="libs/jquery/jquery.min.js"></script>
 </head>
 <body>
@@ -89,7 +102,7 @@
 							<div class="item">
 								Nước hoa
 								<div class="list-btn">
-									<button class="btn-xs btn btn-success">Sửa/Xóa</button>
+									<button class="btn-xs btn btn-success" data-out="1">Sửa/Xóa</button>
 								</div>
 							</div>
 							<ul>
@@ -97,7 +110,7 @@
 									<div class="item">
 										Nước hoa Pháp
 										<div class="list-btn">
-											<button class="btn-xs btn btn-success">Sửa/Xóa</button>
+											<button class="btn-xs btn btn-success" data-out="1">Sửa/Xóa</button>
 										</div>
 									</div>
 								</li>
@@ -105,7 +118,7 @@
 									<div class="item">
 										Nước hoa Anh
 										<div class="list-btn">
-											<button class="btn-xs btn btn-success">Sửa/Xóa</button>
+											<button class="btn-xs btn btn-success" data-out="1">Sửa/Xóa</button>
 										</div>
 									</div>
 								</li>
@@ -120,7 +133,7 @@
 							<div class="item">
 								Son
 								<div class="list-btn">
-									<button class="btn-xs btn btn-success">Sửa/Xóa</button>
+									<button class="btn-xs btn btn-success" data-out="1">Sửa/Xóa</button>
 								</div>
 							</div>
 						</li>
@@ -294,9 +307,43 @@
 			</ul>
 		</nav>
 		<!-- End Nav Bottom -->
+
+		<!-- Option -->
+
+		<!-- Clear -->
+		<div class="nav-option modalTabs" id="1">
+			<div class="nav-content p-0">
+				<ul class="menu-option">
+					<li>
+						Thêm nhãn hàng
+					</li>
+					<li>
+						Sửa nhãn hàng
+					</li>
+					<li>
+						Xoa nhãn hàng
+					</li>
+				</ul>
+			</div>
+			<div class="hide flex-center">
+				<!--?xml version="1.0" encoding="iso-8859-1"?--><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32.635 32.635" style="enable-background:new 0 0 32.635 32.635;" xml:space="preserve"> <g> <path d="M32.135,16.817H0.5c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h31.635c0.276,0,0.5,0.224,0.5,0.5 S32.411,16.817,32.135,16.817z"></path> <path d="M13.037,29.353c-0.128,0-0.256-0.049-0.354-0.146L0.146,16.669C0.053,16.575,0,16.448,0,16.315s0.053-0.26,0.146-0.354 L12.684,3.429c0.195-0.195,0.512-0.195,0.707,0s0.195,0.512,0,0.707L1.207,16.315l12.184,12.184c0.195,0.195,0.195,0.512,0,0.707 C13.293,29.304,13.165,29.353,13.037,29.353z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+			</div>
+		</div>
+
+		<!-- End Option -->
 	</section>
 	<!-- JS -->
+
+	<!-- Bootstrap js -->
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- fullscreen select -->
+	<script src="libs/fullscreen-select/js/bootstrap-fullscreen-select.min.js"></script>
+	
+	<!-- datetimepicker -->
+	<script src="libs/datetimepicker/js/gijgo.min.js"></script>
+
+	<!-- Main Js All -->
 	<script src="js/main.js"></script>
 </body>
 </html>

@@ -225,3 +225,14 @@
          left: 0;
     }
 }
+
+@include keyframes (ripple-animation) {
+    from {
+      @include transform(scale(1));
+      opacity: 0.4;
+    }
+    to {
+      @include transform(scale(100));
+      opacity: 0;
+    }
+}

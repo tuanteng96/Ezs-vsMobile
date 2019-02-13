@@ -68,28 +68,28 @@ $(document).ready(function(){
 
 	// nav option
 	// 
-	function navOptionHide(){
-		$('.background-option').hide();
-		$('.nav-option').removeClass('active');
-	};
-	function navOption(){
-		$('.wrapper').append("<div class='background-option'></div>");
-		var bgOption = $(".background-option");
-		$('.nav-option').addClass('active');
-		bgOption.click(function(event){
-			if (event.target) {
-				navOptionHide()
-			}
-		});
+	// function navOptionHide(){
+	// 	$('.background-option').hide();
+	// 	$('.nav-option').removeClass('active');
+	// };
+	// function navOption(){
+	// 	$('.wrapper').append("<div class='background-option'></div>");
+	// 	var bgOption = $(".background-option");
+	// 	$('.nav-option').addClass('active');
+	// 	bgOption.click(function(event){
+	// 		if (event.target) {
+	// 			navOptionHide()
+	// 		}
+	// 	});
 
-		$('.nav-option .hide').click(function(){
-			navOptionHide()
-		});
-	}
+	// 	$('.nav-option .hide').click(function(){
+	// 		navOptionHide()
+	// 	});
+	// }
 
-	$('.nav-service li .btn, .btn-menu').click(function(){
-		navOption();
-	});
+	// $('.btn-menu').click(function(){
+	// 	navOption();
+	// });
 	
 	//
 	//key search
@@ -100,7 +100,7 @@ $(document).ready(function(){
 	];
 
 	$('.key-search').focus(function(){
-		$('.nav-select').addClass("active");
+		$('.nav-select').addClass("active-is");
 		$('.input-filter').focus();
 	});
 
@@ -114,7 +114,7 @@ $(document).ready(function(){
 		}, 1000);
 	});
 	$(".nav-select .hide").click(function(){
-		$(".nav-select").removeClass("active");
+		$(".nav-select").removeClass("active-is");
 	});
 	
 	// pos search
@@ -138,18 +138,86 @@ $(document).ready(function(){
 
 	// List select Post
 	// 
-	// $(".btn-product").click(function(){
-	// 	$(this).addClass("active");
-	// 	$(".nav-select").addClass("active");
-	// 	navOptionHide();
-	// });
+	// Create Background Option
+	$('.wrapper').append("<div class='background-option'></div>");
+	var bgOption = $(".background-option");
+	bgOption.hide();
 
+	// Data-out click
 	$("[data-out]").click(function(){
+		// This addClass Active
 		$("[data-out]").removeClass("active");
 		$(this).addClass("active");
 
+		// Check active to ID
+		// 
 		let out = $(this).attr("data-out");
-		$("[data-option='"+ out +"']").addClass("active");
-		navOptionHide();
+		$('.nav-option').removeClass('active-is');
+		$("#"+out).addClass("active-is");
+
+		// Check active to ID
+		// 
+		if($("#"+out).hasClass("active-is")){
+			bgOption.show();
+		}
+		else {
+			bgOption.hide();
+		}
+	});
+
+	// bgOption Target hide
+	bgOption.click(function(event){
+		if (event.target) {
+			$(".modalTabs").removeClass("active-is");
+			bgOption.hide();
+		}
+	});
+
+	// hide modalTabs
+	//
+	$(".modalTabs > .hide").click(function(){
+		$(this).parents().removeClass("active-is");
+		bgOption.hide();
 	})
+
 });
+
+
+// button active 
+// 
+(function (window, $) {
+  
+  $(function() {
+    
+    
+    $('.btn').on('click', function (event) {
+      event.preventDefault();
+      
+      var $div = $('<div/>'),
+          btnOffset = $(this).offset(),
+      		xPos = event.pageX - btnOffset.left,
+      		yPos = event.pageY - btnOffset.top;
+      
+
+      
+      $div.addClass('ripple-effect');
+      var $ripple = $(".ripple-effect");
+      
+      $ripple.css("height", $(this).height());
+      $ripple.css("width", $(this).height());
+      $div
+        .css({
+          top: yPos - ($ripple.height()/2),
+          left: xPos - ($ripple.width()/2),
+          background: $(this).data("ripple-color")
+        }) 
+        .appendTo($(this));
+
+      window.setTimeout(function(){
+        $div.remove();
+      }, 2000);
+    });
+    
+  });
+  
+})(window, jQuery);

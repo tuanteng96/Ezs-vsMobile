@@ -42,6 +42,10 @@ $color-map: (
 	font-weight: 400;
 	@include placeholder-color(#d7d7d7,#000);
 }
+textarea.form-control {
+	min-height: 80px;
+	resize: none;
+}
 .btn-add {
 	width: 90px;
 	height: 42px;
